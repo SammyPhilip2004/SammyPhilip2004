@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="date"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Register Account</h2>
+<form>
+    <div class="form-group">
+        <label for="username">User Name:</label>
+        <input type="text" id="username" name="username" minlength="4" required>
+        <div class="error">User name must be at least 4 characters</div>
+    </div>
+    
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <div class="error">Passwords do not match</div>
+    </div>
+    
+    <div class="form-group">
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+    </div>
+    
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <div class="error">Invalid email format</div>
+    </div>
+    
+    <div class="form-group">
+        <label for="zip">Zip Code:</label>
+        <input type="text" id="zip" name="zip" pattern="\d{5}|\d{5}-\d{4}" required>
+        <div class="error">Invalid Zip Code</div>
+    </div>
+    
+    <div class="form-group">
+        <label for="card">Card Type:</label>
+        <select id="card" name="card">
+            <option value="Visa">Visa</option>
+            <option value="MasterCard">MasterCard</option>
+            <option value="American Express">American Express</option>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label for="card-number">Card Number:</label>
+        <input type="tel" id="card-number" name="card-number" pattern="\d{16}" required>
+        <div class="error">Invalid card number format</div>
+    </div>
+    
+    <div class="form-group">
+        <label for="expiration-date">Expiration Date:</label>
+        <input type="date" id="expiration-date" name="expiration-date" required>
+        <div class="error">Invalid date format</div>
+    </div>
+    
+    <button type="submit">Register</button>
+    <button type="reset">Clear Form</button>
+</form>
+
+</body>
+</html>
